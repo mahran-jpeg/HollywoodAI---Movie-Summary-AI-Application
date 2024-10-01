@@ -14,9 +14,7 @@ import {
   signInAnonymously
 } from 'firebase/auth'
 import { useRouter } from 'next/navigation'
-import { FcGoogle } from "react-icons/fc";
-import { XMarkIcon } from "@heroicons/react/16/solid";
-import { IoPerson } from "react-icons/io5";
+
 export default function AuthModal() {
   const { isAuthModalOpen, setIsAuthModalOpen, user } = useAuth()
   const [isSignUp, setIsSignUp] = useState(false)
@@ -112,51 +110,45 @@ export default function AuthModal() {
 
   return (
     <div className="fixed z-50 inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-md relative ">
+      <div className="bg-white rounded-lg shadow-lg w-full max-w-md relative">
         <button
           onClick={() => setIsAuthModalOpen(false)}
-        
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
           disabled={loading}
         >
-          <XMarkIcon  className="modal__close" />
+          <X size={24} />
         </button>
         <div className="p-6">
-          <h2 className="modal__title">
+          <h2 className="text-2xl font-bold mb-6 text-center">
             {isForgotPassword ? 'Reset Password' : isSignUp ? 'Sign Up' : 'Log In'}
           </h2>
           {!isForgotPassword && (
             <>
-            <div className="modal__buttons">
-            <button
+              <Button
                 onClick={handleGoogleSignIn}
-                
-                className="modal__button"
+                variant="outline"
+                className="w-full mb-4 flex items-center justify-center gap-2"
                 disabled={loading}
               >
-               <FcGoogle className="modal__button__icon" />
-               
+                <svg className="w-5 h-5" viewBox="0 0 24 24">
+                  {/* Google icon paths */}
+                </svg>
                 {isSignUp ? 'Sign up with Google' : 'Login with Google'}
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={handleGuestSignIn}
-                className="modal__button"
+                variant="outline"
+                className="w-full mb-4 flex items-center justify-center gap-2"
                 disabled={loading}
               >
-                <IoPerson className="modal__button__icon" />
-              <span className="modal__button__text">Login as Guest</span>
-              </button>
-            </div>
-             
+                Login as Guest
+              </Button>
             </>
           )}
-         <div className="break">
-              <div className="break__line"></div>
-              <div className="break__or">or</div>
-              <div className="break__line"></div>
-            </div>
+          <div className="text-center text-sm text-gray-500 mb-4">or</div>
           <form onSubmit={isForgotPassword ? handleForgotPassword : isSignUp ? handleEmailSignUp : handleEmailSignIn}>
             <div className="mb-4">
-              <label htmlFor="email" className="modal__form__field__label">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 Email Address
               </label>
               <Input
@@ -167,7 +159,6 @@ export default function AuthModal() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={loading}
-                 className="modal__form__field__input"
               />
             </div>
             {!isForgotPassword && (
@@ -183,7 +174,6 @@ export default function AuthModal() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={loading}
-                   className="modal__form__field__input"
                 />
               </div>
             )}
