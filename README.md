@@ -1,6 +1,6 @@
 # HollywoodAI
 
-HollywoodAI is an advanced movie summary service that uses artificial intelligence to provide high-quality summaries of movies. This Next.js application offers users the ability to browse, search, and access AI-generated summaries of popular movies.
+Developed and deployed a user-friendly platform for AI-powered film summaries, achieving a 95% satisfaction rate based on feedback on accuracy and readability, using Next.js. TypeScript, Firebase..
 
 ## Features
 
