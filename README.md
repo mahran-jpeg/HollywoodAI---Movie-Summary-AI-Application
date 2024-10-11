@@ -1,35 +1,13 @@
-# HollywoodAI
+# HollywoodAI - Movie Summary AI Application
+
+<img width="1425" alt="Screenshot 2024-10-11 at 10 41 35 am" src="https://github.com/user-attachments/assets/cf86c32a-a880-4fd2-a3ef-018753daa3e8">
 
 Developed and deployed a user-friendly platform for AI-powered film summaries, achieving a 95% satisfaction rate based on feedback on accuracy and readability, using Next.js. TypeScript, Firebase..
 
-## Features
 
-- User authentication (sign up, login, guest login)
-- Browse and search movie summaries
-- AI-generated movie summaries with audio playback
-- Favorite movies functionality
-- Subscription plans (Premium and VIP+)
-- Responsive design for various screen sizes
 
-## Tech Stack
 
-- Next.js 14
-- React 18
-- TypeScript
-- Firebase (Authentication and Firestore)
-- Stripe (Payment processing)
-- Tailwind CSS
-- Radix UI components
-- Lucide React icons
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or later)
-- npm or yarn
-- Firebase account
-- Stripe account
 
 ### Installation
 
@@ -62,35 +40,7 @@ Developed and deployed a user-friendly platform for AI-powered film summaries, a
    npm run dev
    ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-## Project Structure
 
-- `app/`: Contains the main application pages and components
-- `components/`: Reusable React components
-- `lib/`: Utility functions and helpers
-- `public/`: Static assets (images, fonts, etc.)
 
-## Key Components
 
-- `AuthContext.tsx`: Manages user authentication state
-- `AuthModal.tsx`: Handles user authentication UI
-- `Sidebar.tsx`: Navigation sidebar component
-- `MovieItem.tsx`: Displays individual movie details
-- `AudioPlayer.tsx`: Custom audio player for movie summaries
-
-## API Routes
-
-- `/api/stripe-webhook`: Handles Stripe webhook events for subscription management
-
-## Deployment
-
-This project is set up for easy deployment on Vercel. Connect your GitHub repository to Vercel and it will automatically deploy your main branch.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License.
